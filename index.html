@@ -10,18 +10,18 @@
     <!-- ========================================== -->
     <meta property="og:url" content="https://thiepcuoi.com"> <!-- Thay bằng tên miền thật của bạn sau này -->
     <meta property="og:title" content="Công Ban & Thuỳ Linh - Lễ Thành Hôn">
-    <meta property="og:description" content="Thân mời quý khách đến dự tiệc cưới của Công Ban & Thuỳ Linh | 25 tháng 10, 2026">
+    <meta property="og:description" content="25 tháng 10, 2026">
     
     <!-- LINK ẢNH TUYỆT ĐỐI BẮT BUỘC PHẢI CÓ HTTPS ĐỂ ZALO/FB ĐỌC ĐƯỢC -->
-    <meta property="og:image" content="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1200&q=80">
+    <meta property="og:image" content="https://prnt.sc/yQQIb1Hy7K0k">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
     <meta property="og:type" content="website">
 
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Công Ban & Thuỳ Linh - Wedding Invitation">
-    <meta name="twitter:description" content="Thân mời quý khách đến dự tiệc cưới của Công Ban & Thuỳ Linh">
-    <meta name="twitter:image" content="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1200&q=80">
+    <meta name="twitter:description" content="25 tháng 10, 2026">
+    <meta name="twitter:image" content="https://prnt.sc/yQQIb1Hy7K0k">
     
     <!-- Tailwind CSS & Fonts -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -184,7 +184,7 @@
             <p class="font-serif text-4xl text-center mb-6" id="party-time-text">09:30</p>
 
             <div class="flex items-center justify-center gap-4 mb-2">
-                <span class="font-sans text-xs uppercase tracking-widest">Thứ 7</span>
+                <span class="font-sans text-xs uppercase tracking-widest" id="party-date-text">Thứ 7</span>
                 <span class="w-px h-6 bg-[#c3a373]"></span><span class="font-serif text-4xl">24</span>
                 <span class="w-px h-6 bg-[#c3a373]"></span><span class="font-sans text-xs uppercase tracking-widest">Tháng 10</span>
             </div>
@@ -301,6 +301,7 @@
 
             // ================= 1. XỬ LÝ ĐỘNG THEO URL =================
             const partyTimeText = document.getElementById('party-time-text');
+            const partyDateText = document.getElementById('party-date-text');
             const partyLocationText = document.getElementById('party-location-text');
             
             let targetHour = 9;
@@ -311,17 +312,20 @@
             // Sửa logic nhận diện cho linh hoạt hơn (bất chấp query hay path)
             if (currentUrl.includes('/d') || currentUrl.includes('type=d') || currentUrl.includes('?d')) {
                 partyTimeText.innerText = "16:30";
+                partyDateText.innerText = "Thứ 7";
                 partyLocationText.innerText = "Tiệc cưới sẽ tổ chức tại tư gia nhà gái";
                 targetHour = 16;
                 targetMinute = 30;
             } 
             else if (currentUrl.includes('/r') || currentUrl.includes('type=r') || currentUrl.includes('?r')) {
                 partyTimeText.innerText = "17:00";
+                partyDateText.innerText = "Thứ 7";
                 partyLocationText.innerText = "Tiệc cưới sẽ tổ chức tại tư gia nhà trai";
                 targetHour = 17;
                 targetMinute = 0;
             } else {
                 partyTimeText.innerText = "09:30";
+                partyDateText.innerText = "Chủ Nhật";
                 partyLocationText.innerText = "Tiệc cưới sẽ tổ chức tại tư gia mặc định";
             }
 
