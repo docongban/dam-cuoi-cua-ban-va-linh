@@ -183,7 +183,7 @@
 
             <div class="flex items-center justify-center gap-4 mb-2">
                 <span class="font-sans text-xs uppercase tracking-widest" id="party-date-text">Thứ 7</span>
-                <span class="w-px h-6 bg-[#c3a373]"></span><span class="font-serif text-4xl">24</span>
+                <span class="w-px h-6 bg-[#c3a373]"></span><span class="font-serif text-4xl" id="party-datetime-text">24</span>
                 <span class="w-px h-6 bg-[#c3a373]"></span><span class="font-sans text-xs uppercase tracking-widest">Tháng 10</span>
             </div>
             <p class="font-sans text-sm text-center mb-8">2026</p>
@@ -300,6 +300,7 @@
             // ================= 1. XỬ LÝ ĐỘNG THEO URL =================
             const partyTimeText = document.getElementById('party-time-text');
             const partyDateText = document.getElementById('party-date-text');
+            const partyDateTimeText = document.getElementById('party-datetime-text');
             const partyLocationText = document.getElementById('party-location-text');
             
             let targetHour = 9;
@@ -315,6 +316,7 @@
             if (isGai) {
                 partyTimeText.innerText = "16:30";
                 partyDateText.innerText = "Thứ 7";
+                partyDateTimeText.innerText = "24";
                 partyLocationText.innerText = "Tiệc cưới sẽ tổ chức tại tư gia nhà gái";
                 targetHour = 16;
                 targetMinute = 30;
@@ -322,12 +324,14 @@
             else if (isTrai) {
                 partyTimeText.innerText = "17:00";
                 partyDateText.innerText = "Thứ 7";
+                partyDateTimeText.innerText = "24";
                 partyLocationText.innerText = "Tiệc cưới sẽ tổ chức tại tư gia nhà trai";
                 targetHour = 17;
                 targetMinute = 0;
             } else {
                 partyTimeText.innerText = "09:30";
                 partyDateText.innerText = "Chủ Nhật";
+                partyDateTimeText.innerText = "25";
                 partyLocationText.innerText = "Tiệc cưới sẽ tổ chức tại tư gia mặc định";
             }
 
